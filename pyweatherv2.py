@@ -4,7 +4,10 @@ import argparse
 import requests
 import json
 
-api_secret = os.environ.get('WEATHER_STACK_SECTRET')
+api_secret = os.environ.get('WEATHER_STACK_SECRET')
+
+if api_secret == None: #checking to see if WEATHER_STACK_SECRET is nill 
+    print("You do not yet have a token set for a 'WEATHER_STACK_SECRET' enviornment variable, please set one up now")
 
 parser = argparse.ArgumentParser(description="Return the current weather and condition of a specified area")
 
